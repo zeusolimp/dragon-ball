@@ -53,9 +53,9 @@ export default async function CharacterPage({ params }: CharacterPageProps) {
     return (
         <div>
             <Header />
-            <section className='max-w-2xl mx-auto p-5 flex'>
-                <div>
-                    <Image className='h-90 object-contain mx-auto min-w-72' src={character.image} alt={character.name} width={500} height={500} />
+            <section className='max-w-2xl mx-auto p-5 flex flex-col md:flex-row'>
+                <div className='mb-5 md:mb-0'>
+                    <Image className='h-80 md:h-96 object-contain mx-auto min-w-72' src={character.image} alt={character.name} width={500} height={500} />
                 </div>
                 <div>
                     <h1 className='text-3xl font-bold mb-5'>{character.name} <small className='font-thin text-sm'>{character.race}</small> </h1>
@@ -63,10 +63,8 @@ export default async function CharacterPage({ params }: CharacterPageProps) {
                         {character.description}
                     </p>
                 </div>
-
-
-
             </section>
+            <hr />
             <hr className='pb-5'/>
             <div className='text-center'>
                 <Link className='border-blue-400 text-blue-400 p-5 rounded' href={"/"} >Volver al Inicio</Link>
